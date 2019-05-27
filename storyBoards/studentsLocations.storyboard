@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EWJ-eu-nho">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Students LocationsVC-->
+        <scene sceneID="1fW-qw-pOJ">
+            <objects>
+                <viewController id="e8u-Iv-IRS" customClass="studentsLocationsVC" customModule="On_The_Map" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="o2D-FD-5LW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="WX2-Am-LTE">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ucC-Hp-Xc4" firstAttribute="trailing" secondItem="WX2-Am-LTE" secondAttribute="trailing" id="YZ2-2K-JaD"/>
+                            <constraint firstItem="WX2-Am-LTE" firstAttribute="leading" secondItem="ucC-Hp-Xc4" secondAttribute="leading" id="hCX-aZ-nrU"/>
+                            <constraint firstItem="ucC-Hp-Xc4" firstAttribute="bottom" secondItem="WX2-Am-LTE" secondAttribute="bottom" id="jtb-ZX-gBm"/>
+                            <constraint firstItem="WX2-Am-LTE" firstAttribute="top" secondItem="ucC-Hp-Xc4" secondAttribute="top" id="o0S-sa-DWd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ucC-Hp-Xc4"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="CWv-SC-D6H">
+                        <barButtonItem key="leftBarButtonItem" title="LOG OUT" id="ZcK-OF-tNe">
+                            <connections>
+                                <action selector="logoutClicked:" destination="e8u-Iv-IRS" id="PB4-bb-BfR"/>
+                            </connections>
+                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="X6x-N0-JgB">
+                                <connections>
+                                    <action selector="addStudentLocationClicked:" destination="e8u-Iv-IRS" id="ncQ-5Y-lbB"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="refresh" id="HoQ-AC-Syq">
+                                <connections>
+                                    <action selector="refreshClicked:" destination="e8u-Iv-IRS" id="9JA-K1-Zcu"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="WX2-Am-LTE" id="O7C-3v-C9E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2CY-Sh-ehM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2842.0289855072465" y="-441.29464285714283"/>
+        </scene>
+        <!--Students Locations DetailsVC-->
+        <scene sceneID="6UD-Cr-I73">
+            <objects>
+                <viewController id="O7s-6D-wEl" customClass="studentsLocationsDetailsVC" customModule="On_The_Map" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aX9-PR-Ujq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FJS-cX-69H">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="studentLocationCell" id="1uf-a1-c42">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1uf-a1-c42" id="mZ6-Tb-1wr">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FJS-cX-69H" firstAttribute="top" secondItem="Wc7-x2-AXX" secondAttribute="top" id="A9o-7b-YTH"/>
+                            <constraint firstItem="Wc7-x2-AXX" firstAttribute="bottom" secondItem="FJS-cX-69H" secondAttribute="bottom" id="KrI-7b-buc"/>
+                            <constraint firstItem="FJS-cX-69H" firstAttribute="leading" secondItem="Wc7-x2-AXX" secondAttribute="leading" id="jBW-3Z-gYs"/>
+                            <constraint firstItem="Wc7-x2-AXX" firstAttribute="trailing" secondItem="FJS-cX-69H" secondAttribute="trailing" id="k57-Rk-xCz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Wc7-x2-AXX"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="5To-Vz-tna">
+                        <barButtonItem key="leftBarButtonItem" title="LOG OUT" id="yWf-RD-cYi">
+                            <connections>
+                                <action selector="logoutClicked:" destination="O7s-6D-wEl" id="hrY-UB-H1M"/>
+                            </connections>
+                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="7BC-tJ-hP7">
+                                <connections>
+                                    <action selector="addStudentLocationClicked:" destination="O7s-6D-wEl" id="aGa-Pq-LLK"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="refresh" id="ix6-lu-tUJ">
+                                <connections>
+                                    <action selector="refreshClicked:" destination="O7s-6D-wEl" id="gRP-d1-nMa"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="studentsLocationsTV" destination="FJS-cX-69H" id="Cv4-no-5oA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k2a-0I-MO9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2842.0289855072465" y="245.75892857142856"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="ARR-Cc-nW2">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="EWJ-eu-nho" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="3Ln-xN-qNV"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7DK-Qp-Og1">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="1CN-HN-uKS" kind="relationship" relationship="viewControllers" id="6C1-k7-Vjo"/>
+                        <segue destination="0pD-Ox-CJH" kind="relationship" relationship="viewControllers" id="D4d-W0-Ry9"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eER-ni-4YV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="957.97101449275374" y="20.758928571428569"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="7a8-0g-sCw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1CN-HN-uKS" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="icon_mapview-deselected" id="7Xc-Hh-bDG"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6cR-XH-tLh">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="e8u-Iv-IRS" kind="relationship" relationship="rootViewController" id="umL-CH-oYV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sXE-jN-Hrq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1931.8840579710147" y="-441.29464285714283"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="Q0G-j9-fw0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0pD-Ox-CJH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="icon_listview-selected" id="60k-5V-20h"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8g1-1N-yNj">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="O7s-6D-wEl" kind="relationship" relationship="rootViewController" id="V3W-bt-rjT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nDz-eM-0re" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1931.8840579710147" y="245.75892857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon_listview-selected" width="75" height="50"/>
+        <image name="icon_mapview-deselected" width="75" height="50"/>
+    </resources>
+</document>
